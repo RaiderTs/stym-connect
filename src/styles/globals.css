@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --char-w: 1ch;
+  --gap: calc(0.5 * var(--char-w));
+  --n-char: 6;
+  --in-w: calc(var(--n-char) * (var(--char-w) + var(--gap)));
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.PhoneInputCountry {
+  background-color: #eaeef266;
+  padding: 1.25rem;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.PhoneInput {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputCountryIcon--border {
+  box-shadow: none !important;
+}
+
+.PhoneInput input {
+  width: 100%;
+  /* margin-left: 2px; */
+  padding: 1.25rem;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #eaeef266;
+}
+
+.PhoneInputCountrySelectArrow {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  margin-left: 0.5rem !important;
+  margin-right: -0.5rem;
+  margin-bottom: 0.3rem !important;
+  /* color: red */
+}
+
+.PhoneInputCountrySelect:focus
+  + .PhoneInputCountryIcon
+  + .PhoneInputCountrySelectArrow {
+  color: #ff6a2a !important;
+}
+
+.PhoneInputDark .PhoneInputCountrySelect {
+  background-color: #5f5f5f;
+}
+
+.PhoneInputLight .PhoneInputCountrySelect {
+  background-color: #fff;
+}
+
+.otp-input {
+  display: block;
+  margin: 0.5rem auto;
+  border: none;
+  padding: 0;
+  width: var(--in-w);
+  background: repeating-linear-gradient(
+      90deg,
+      dimgrey 0,
+      dimgrey var(--char-w),
+      transparent 0,
+      transparent calc(var(--char-w) + var(--gap))
+    )
+    0 100% / calc(var(--in-w) - var(--gap)) 2px no-repeat;
+
+  font-size: 7ch;
+  letter-spacing: var(--gap);
+}
+
+.profile-number input {
+  padding: 0.65rem;
+  font-size: 0.8rem;
+}
+.profile-number > div {
+  padding: 0.5rem 1rem;
+}
+
+.PhoneInput--focus {
+  outline: none;
+  border-width: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Audio Player  */
+
+.rhap_container {
+  /* background-color: #0f2042 !important; */
+  position: relative;
+  padding: 4px 15px !important;
+}
+
+.rhap_progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 !important;
+  height: 0 !important;
+  width: 100%;
+}
+
+.rhap_progress-indicator {
+  display: none;
+}
+
+.rhap_progress-filled {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  background-color: #8b37ff !important;
+}
+
+.rhap_progress-bar,
+.rhap_download-progress {
+  border-radius: 0 !important;
+  height: 4px !important;
+}
+
+.rhap_progress-section {
+}
+
+.rhap_play-pause-button {
+  height: 26px !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.rhap_additional-controls {
+  flex: 0 !important;
+}
+
+.rhap_total-time {
+  display: none !important;
+}
+
+.rhap_main-controls {
+  margin-left: 10px;
+  margin-right: 20px;
+  order: -1;
+  gap: 10px;
+}
+
+.rhap_repeat-button {
+  order: 2;
+}
+
+.rhap_controls-section {
+  margin-top: 0 !important;
+  gap: 1rem;
+}
+
+.rhap_current-time {
+  font-size: 0 !important;
+}
+
+@media screen and (max-width: 460px) {
+  .rhap_volume-bar-area {
+    display: none !important;
+  }
+
+  .rhap_volume-container {
+    flex: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rhap_volume-controls {
+    flex: none !important;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e3e3e3;
+  z-index: -1020;
+  position: absolute;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff6a2a;
+  border-radius: 10px;
+}
+
+@supports (scrollbar-color: rgb(139, 32, 32) rgb(31, 31, 107)) {
+  * {
+    scrollbar-color: #ff6a2a transparent;
+    scrollbar-width: thin;
+  }
+}
+
+.grid-404 {
+  display: grid;
+  place-items: center;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* skeleton */
+[data-stym-track-placeholder]::after {
+  content: ' ';
+  box-shadow: 0 0 50px 9px rgba(254, 254, 254);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  animation: load 1s infinite;
+}
+@keyframes load {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.sendbird-app__wrap {
+  gap: 2rem;
+}
+
+.sendbird-app__channellist-wrap {
+  border-radius: 30px;
+}
+
+.sendbird-conversation {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.sendbird-conversation__footer {
+  padding: 0 !important;
+  margin-top: 1rem !important;
+}
+
+.sendbird-message-input-wrapper__message-input {
+  padding: 0 !important;
+}
+
+.sendbird-message-input {
+  display: flex !important;
+}
+
+.sendbird-message-input--textarea {
+  border-radius: 10px !important;
+  border-color: #e3e3e3 !important;
+}
+
+.sendbird-message-input .sendbird-message-input--attach {
+  bottom: 14px !important;
+}
+
+.sendbird-chat-header {
+  background-color: transparent !important;
+}
+
+.sendbird-channel-list {
+  border-radius: 10px !important;
+}
+
+.sendbird-app__channellist-wrap {
+  border: 1px solid #e3e3e3 !important;
+}
+
+.sendbird-channel-list {
+  background-color: transparent !important;
+}
+
+.sendbird-channel-header {
+  background-color: transparent !important;
+  /* border-radius: 30px !important; */
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  border: 2px solid #ff00bf;
+  padding: 3rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+/* .dropzone-container {
+  text-align: center;
+  background-color: #efebeb;
+  height: 100%;
+  width: 100%;
+}
+
+.dropzone-area {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.upload-container {
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 10px;
+} */
+#nprogress .bar {
+  background: #ff6a2a !important;
+  height: 0.4rem !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #ff6a2a, 0 0 5px #ff6a2a !important;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+.css-1ews2c8 {
+  padding: 0 !important;
+}
+
+@media (min-width: 1280px) {
+  .enterprise-mt {
+    margin-top: -1rem !important;
+  }
+}
